@@ -13,11 +13,17 @@ public class Waters
     public int maxContainer(int[] height)
     {
         int max = 1;
+        int min = 1;
         for (int i = 0; i < height.length; i++)
         {
+            if (height[i] == 0)
+            {
+                min = 0;
+            }
             for (int j = i + 1; j < height.length && height[i] >= 2; j++)
             {
                 int maxHeight;
+
                 if (height[i] > height[j])
                 {
                     maxHeight = height[j];
@@ -33,7 +39,17 @@ public class Waters
                 }
             }
         }
-        return max;
+
+        if (max == 1 && min == 1)
+        {
+            return 1;
+        } else if (min == 0)
+        {
+            return 0;
+        } else
+        {
+            return max;
+        }
     }
 
 }
@@ -46,8 +62,10 @@ class WaterTesters
         Waters water = new Waters();
 
         int[] heights = {2, 3, 8, 2, 4, 6, 1, 2, 4};
+        int[] sillyTest = {1, 1};
+        int[] zeroAndOne = {0, 1, 2, 4};
 
-        int max = water.maxContainer(heights);
+        int max = water.maxContainer(zeroAndOne);
 
     }
 }
