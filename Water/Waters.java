@@ -14,11 +14,12 @@ public class Waters
     {
         int max = 1;
         int min = 1;
+        boolean hasZero = false;
         for (int i = 0; i < height.length; i++)
         {
             if (height[i] == 0)
             {
-                min = 0;
+                hasZero = true;
             }
             for (int j = i + 1; j < height.length && height[i] >= 2; j++)
             {
@@ -40,13 +41,11 @@ public class Waters
             }
         }
 
-        if (max == 1 && min == 1)
-        {
-            return 1;
-        } else if (min == 0)
+        if (max == 1 && hasZero)
         {
             return 0;
-        } else
+        }
+        else
         {
             return max;
         }
