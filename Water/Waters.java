@@ -2,8 +2,6 @@ package Water;
 
 public class Waters
 {
-
-
     public int maxArea(int[] height) {
 
         return maxContainer(height);
