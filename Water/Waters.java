@@ -6,7 +6,7 @@ public class Waters
 
     public int maxArea(int[] height) {
 
-        return 0;
+        return maxContainer(height);
     }
 
 
@@ -15,7 +15,7 @@ public class Waters
         int max = 0;
         for (int i = 0; i < height.length; i++)
         {
-            for (int j = i + 1; j < height.length; j++)
+            for (int j = i + 1; j < height.length && height[i] >= 2; j++)
             {
                 int maxHeight;
                 if (height[i] > height[j])
