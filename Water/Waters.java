@@ -62,9 +62,10 @@ class WaterTesters
 
         int[] heights = {2, 3, 8, 2, 4, 6, 1, 2, 4};
         int[] sillyTest = {1, 1};
-        int[] zeroAndOne = {0, 1, 2, 4};
+        int[] zeroAndOne = {0, 1};
+        int[] anotherTestWithZero = {0, 1, 2, 4};
 
-        int max = water.maxContainer(zeroAndOne);
+        int max = water.maxContainer(heights);
 
     }
 }
