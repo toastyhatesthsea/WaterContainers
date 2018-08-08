@@ -12,16 +12,13 @@ public class Waters
 
     public int maxContainer(int[] height)
     {
-        int max = 1;
+        int max = 0;
         int min = 1;
         boolean hasZero = false;
         for (int i = 0; i < height.length; i++)
         {
-            if (height[i] == 0)
-            {
-                hasZero = true;
-            }
-            for (int j = i + 1; j < height.length && height[i] >= 2; j++)
+
+            for (int j = i + 1; j < height.length; j++)
             {
                 int maxHeight;
 
@@ -41,14 +38,7 @@ public class Waters
             }
         }
 
-        if (max == 1 && hasZero)
-        {
-            return 0;
-        }
-        else
-        {
-            return max;
-        }
+        return max;
     }
 
 }
@@ -64,8 +54,9 @@ class WaterTesters
         int[] sillyTest = {1, 1};
         int[] zeroAndOne = {0, 1};
         int[] anotherTestWithZero = {0, 1, 2, 4};
+        int[] oneTwoOne = {1, 2, 1};
 
-        int max = water.maxContainer(heights);
+        int max = water.maxContainer(zeroAndOne);
 
     }
 }
